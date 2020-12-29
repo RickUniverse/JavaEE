@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>session</title>
+    <base href="http://localhost:8080/Web/">
+</head>
+<body>
+<iframe width="500" height="500" name="target"></iframe>
+<ul>
+    <li>
+        <a href="sessionServlet?action=createAndGet" target="target">session的创建和获取（id号，是否为新创建）</a>
+    </li>
+    <li>
+        <a href="sessionServlet?action=setSession" target="target">session域数据的存储</a>
+    </li>
+    <li>
+        <a href="sessionServlet?action=getSession" target="target">session数据的获取</a>
+    </li>
+    <li>session的存活</li>
+    <li>
+        <ul>
+            <li>
+                <a href="sessionServlet?action=defaultLife" target="target">session的默认超时及配置</a>
+            </li>
+            <li>
+                <a href="sessionServlet?action=setLife" target="target">session的三秒超时销毁</a>
+            </li>
+            <li>
+                <a href="sessionServlet?action=deleteNow" target="target">session的马上销毁</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="sessionServlet?action=testPath" target="target">浏览器和session绑定的原理</a>
+    </li>
+</ul>
+</body>
+</html>

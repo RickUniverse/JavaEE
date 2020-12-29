@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*var onLoadAfter = function () {
+            alert('静态注册onLoad之后！')
+        }
+        window.onload = function () {
+            alert('动态注册onLoad之后！')
+        }*/
+
+        window.onload = function () {
+            var password = document.getElementById("password");
+            password.onblur = function () {
+                console.log("失去了焦点")
+            }
+        }
+    </script>
+</head>
+<!--<body onload="onLoadAfter()">-->
+<body>
+    <input id="password" type="text">
+</body>
+</html>

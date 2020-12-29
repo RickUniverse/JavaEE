@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-1.8.3.js"></script>
+    <script type="text/javascript">
+        function jQueryAjax(){
+            /*$.ajax({
+                url:"http://localhost:8080/Web/ajaxServlet",
+                data:{action:"jQueryAjax"},
+                type:"GET",
+                success:function (e) {
+                    alert(e.one.id)
+                    alert(e.one.name)
+                },
+                dataType:"json"
+            })*/
+            /*get*/
+            /*$.get("http://localhost:8080/Web/ajaxServlet",{action:"jQueryGet"},function (e) {
+                alert(e.one.id)
+                alert(e.one.name)
+            },"json");*/
+            /*getJSON*/
+            /*$.getJSON("http://localhost:8080/Web/ajaxServlet",{action:"jQueryGetJSON"},function (e) {
+                alert(e.one.id)
+                alert(e.one.name)
+            })*/
+            /*serialize*/
+            alert( $("#form").serialize() )
+            $.getJSON("http://localhost:8080/Web/ajaxServlet",
+                "action=jQueryGetSerialize&" + $("#form").serialize(),
+                function (e) {
+                alert(e.one.id)
+                alert(e.one.name)
+            })
+        }
+    </script>
+
+</head>
+<body>
+    <button onclick="jQueryAjax()">ajaxRequest</button>
+
+    <form id="form">
+        <input type="text" name="username" value="username">
+        <input type="text" name="password" value="password">
+    </form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-1.8.3.js"></script>
+    <script>
+        //
+        $(function () {
+            let buttons = $('button');
+            for (let i = 0; i < buttons.length; i++) {
+                let button = buttons[i];
+                alert(button)
+            }
+            alert(buttons);
+            alert(document.getElementsByTagName('button'));
+        })
+    </script>
+</head>
+<body>
+    <button></button>
+    <button></button>
+    <button></button>
+</body>
+</html>

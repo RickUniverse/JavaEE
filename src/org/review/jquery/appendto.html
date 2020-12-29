@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-1.8.3.js"></script>
+    <script>
+        $(function () {
+            //选中到右边
+            $(':button:eq(0)').click(function () {
+                $('select:eq(0) option:checked').appendTo($('select:eq(1)'))
+            })
+            //全部添加到右边
+            $(':button:eq(1)').click(function () {
+                $('select:eq(0) option').appendTo($('select:eq(1)'))
+            })
+            //选中到左边
+            $(':button:eq(2)').click(function () {
+                $('select:eq(1) option:checked').appendTo($('select:eq(0)'))
+            })
+            //全部添加到左边
+            $(':button:eq(3)').click(function () {
+                $('select:eq(1) option').appendTo($('select:eq(0)'))
+            })
+        })
+    </script>
+</head>
+<body>
+<select name="s1" id="s1" multiple="multiple">
+    <option value="1">s11</option>
+    <option value="2">s12</option>
+    <option value="3">s13</option>
+    <option value="4">s14</option>
+</select>
+<button>选中添加到右边</button>
+<button>全部添加到右边</button>
+
+<select name="s2" id="s2" multiple="multiple">
+    <option value="1">s21</option>
+    <option value="2">s22</option>
+    <option value="3">s23</option>
+    <option value="4">s24</option>
+</select>
+<button>选中添加到左边</button>
+<button>全部添加到左边</button>
+</body>
+</html>

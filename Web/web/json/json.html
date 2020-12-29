@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        /*json对象*/
+        var jsonObj = {
+            "key1" : true,
+            "key2" : [],
+            "key3" : {
+                "key1" :"key1_value",
+                "key2" : 111
+            }
+        }
+
+        /*json对象转换为字符串*/
+        var jsonStr = JSON.stringify(jsonObj);
+        /*json字符串转换为json对象*/
+        var jsonObj2 = JSON.parse(jsonStr);
+        alert(jsonObj2.key1);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

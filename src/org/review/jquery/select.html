@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-1.8.3.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('button').click(function () {
+                /*
+                * 基本
+                * */
+                // $('.one~.two').css('border','1px solid red');//所有。one相对的所有two元素
+                // $('.one input').css('border','1px solid red');//。one里的所有input元素
+                // $('.one+.two').css('background','red');//。one的下一个。two元素
+                // $('.one>input').css('background','red');//子元素
+
+                /*
+                * 过滤
+                * */
+                // $('.one:first').css('background','red');//第一个。one元素
+                // $('.one:last').css('background','red');//最后一个。one元素
+                // $('.one:not(.one:even)').css('background','red');//选中奇数的
+                // $('.one:eq(1)').css('background','red');//选中下标为1的。one元素
+                // $('.one:gt(1)').css('background','red');//选中下标大于1的元素
+                // $('.one:lt(3)').css('background','red');//选中下标小于3的元素
+                // $(':header').css('background','red');//选中所有标题
+                // $(':animated').css('background','red');//选中所有正在做动画的元素
+
+
+                /*
+                * 内容
+                * */
+                // $('h1:contains("标")').css('background','red');//选择标题中有  标  字的元素
+                // $('h1:empty').css('background','red');//选择标题文本为空，没有子元素的元素
+                // $('h1:has(.mi)').css('background','red');//选择标题元素属性。clss中时含。mi的元素
+                // $('h1:parent').css('background','red');//选择标题含有子元素，文本的元素
+
+
+                /*
+                * 屬性
+                * */
+                // $('input[name]').css('background','red');//选择含有属性name的input元素
+                // $('input[name="he"]').css('background','red');//选择属性name为he的input元素
+                // $('input[name^="h"]').css('background','red');//选择属性name是以h开头的input元素
+                // $('input[name$="e"]').css('background','red');//选择属性name是以e结尾的input元素
+                // $('input[name*="e"]').css('background','red');//选择属性name含有e的input元素
+                // $('input[title][name*="e"]').css('background','red');//选择有title属性且属性name含有e的input元素
+
+                /*
+                * 表单
+                * */
+                // $('form :text:enabled').css('background','red').val('asdfsdf');//选择类型type为text的可用的input元素,并赋值
+                // $('form :password:disabled').css('background','red');//选择类型type为password的不可用的input元素
+                // $('form :image').css('background','red');//选择类型type为image的input元素
+                // $('form :file').css('background','red');//选择类型type为file的input元素
+                // $('form :submit').css('background','red');//选择类型type为submit的input元素
+                // $('form :button').css('background','red');//选择类型type为button的input元素
+                // $('form :radio').css('background','red');//选择类型type为radio的input元素
+                //
+                // $('form :checked').css('background','red');//选择所有选中的check 和 radio元素
+                var att = $('form option:selected').css('background','red').val('sdfsdf');//选择所有有selected属性的option元素
+                $(att).each(function () {
+                    alert(this);
+                })
+            })
+        });
+    </script>
+</head>
+<body>
+    <h1>标题</h1>
+    <h1 class="mi">标题</h1>
+    <h1></h1>
+    <button>点击</button>
+    <div class="one">
+        <label for="he">嗨</label>
+        <input title="tit" type="text" name="he">
+    </div>
+    <div class="two">
+        aaa
+    </div>
+    <div class="one">
+        <label for="he">嗨</label>
+        <input type="text" name="he">
+    </div>
+    <div class="two">
+        aaa
+    </div>
+    <div class="one">
+        <label for="he">嗨</label>
+        <input type="text" name="he">
+    </div>
+    <div class="two">
+        aaa
+    </div>
+    <div class="one">
+        <label for="he">嗨</label>
+        <input type="text">
+    </div>
+    <div class="two">
+        aaa
+    </div>
+
+    <form action="#">
+        <input type="text">
+        <input type="checkbox">
+        <input type="radio">
+        <input type="image">
+        <input type="file">
+        <input type="submit">
+        <input type="reset">
+        <input type="password">
+        <input type="button">
+        <textarea></textarea>
+        <select name="select" multiple="multiple">
+            <option value="0">0</option>
+            <option selected="selected" value="1">1</option>
+            <option value="2">2</option>
+            <option selected="selected" value="3">3</option>
+            <option selected="selected" value="4">4</option>
+        </select>
+    </form>
+</body>
+</html>

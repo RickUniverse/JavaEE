@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function() {
+            document.getElementById("ajax_button").addEventListener("click",function () {
+
+                //创建XMLHttpRequest对象
+                var xmlHttpRequest = new XMLHttpRequest();
+                //发送到那个地址,true表示异步，false表示同步
+                xmlHttpRequest.open("get","http://localhost:8080/Web/ajaxServlet?action=javaScriptAjax",true);
+                //接收服务器响应的数据
+                xmlHttpRequest.onreadystatechange = function () {
+                    //如果状态码正确
+                    if (xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200) {
+                        //接收服务器的字符串数据
+                        var jsonStr = xmlHttpRequest.responseText;
+                        alert(jsonStr);
+                        //将字符串转为json对象
+                        var jsonObj = JSON.parse(jsonStr);
+                        alert(jsonObj.one.id)
+                        alert(jsonObj.one.name)
+                        alert(jsonObj.two.id)
+                        alert(jsonObj.two.name)
+                        alert(jsonObj.three.id)
+                        alert(jsonObj.three.name)
+                        // document.getElementById("ajax_nav").innerHTML = "姓名:"+ jsonObj +""
+                    }
+                }
+
+                //最好在绑定好时间时提交
+                xmlHttpRequest.send();
+            });
+        }
+/*
+        function ajaxRequest() {
+
+            //创建XMLHttpRequest对象
+            var xmlHttpRequest = new XMLHttpRequest();
+            //发送到那个地址
+            xmlHttpRequest.open("get","http://localhost:8080/Web/ajaxServlet?action=javaScriptAjax");
+            //接收服务器响应的数据
+            xmlHttpRequest.onreadystatechange = function () {
+                //如果状态码正确
+                if (xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200) {
+                    //接收服务器的字符串数据
+                    var jsonStr = xmlHttpRequest.responseText;
+                    alert(jsonStr);
+                    //将字符串转为json对象
+                    var jsonObj = JSON.parse(jsonStr);
+                    alert(jsonObj.one.id)
+                    alert(jsonObj.one.name)
+                    alert(jsonObj.two.id)
+                    alert(jsonObj.two.name)
+                    alert(jsonObj.three.id)
+                    alert(jsonObj.three.name)
+                    // document.getElementById("ajax_nav").innerHTML = "姓名:"+ jsonObj +""
+                }
+            }
+
+            //最好在绑定好时间时提交
+            xmlHttpRequest.send();
+        }
+*/
+    </script>
+</head>
+<body>
+<!--    <button onclick="ajaxRequest()" id="ajax_button">ajax_button</button>-->
+    <button id="ajax_button">ajax_button</button>
+    <div id="ajax_nav">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-1.8.3.js"></script>
+    <script>
+        $(function () {
+            var deleteFun = function () {
+                $(this).parent().parent().remove();
+                return false;
+            }
+
+            $('a').click(deleteFun)//传入函数，而不是带括号的返回值
+
+        })
+    </script>
+</head>
+<body>
+<table>
+    <tr>
+        <td></td>
+        <td><a href="#">点击我，我是a标签</a></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><a href="#">点击我，我是a标签</a></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><a href="#">点击我，我是a标签</a></td>
+    </tr>
+</table>
+</body>
+</html>

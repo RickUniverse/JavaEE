@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!--xml声明 ， 版本和编码集-->
+<books><!--描述书-->
+    <book id="SN2134"><!--描述一本书 id为序列号-->
+        <name>姓名</name><!--书名-->
+        <author>作者</author><!--作者-->
+        <price>234</price><!--价格-->
+    </book>
+    <book id="SN2135">
+        <name>姓名1</name>
+        <author>
+            <![CDATA[<!--文本区不会解析特殊字符-->
+                文本区<<<>>>
+            ]]>
+        </author>
+        <price>222</price>
+    </book>
+    <book id="SN2136">
+        <name>姓名2</name>
+        <author>作者2</author>
+        <price>333</price>
+    </book>
+    <book id="SN2137">
+        <name>姓名3</name>
+        <author>作者3</author>
+        <price>444</price>
+    </book>
+</books>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //包含 字符，数字，下划线
+        // var patt = /\w/;
+        // a - z
+        // var patt = /[a-z]/;
+        // 包含至少一个a
+        // var patt = /a+/;
+        //包含零个或多个a
+        // var patt = /a*/;
+        //包含连续三个a
+        // var patt = /a?/;
+        //最少三个连续的a，最多五个
+        // var patt = /a{3,5}/;
+        //必须以a结尾
+        // var patt = /a$/;
+        //必须以a开头
+        // var patt = /^a/;
+        //密码只能是数组字符下划线,最少6为，最多12位
+        var patt = /^\w{6,12}$/;
+        var str = '123a手动阀a';
+
+        // document.getElementById("body").innerHTML = "<img src=\"\" alt=\"\">";
+        alert(patt.test(str));
+
+        window.onload = function () {
+            let element = document.getElementsByTagName('input');
+            for (var i = 0; i < element.length; i++) {
+                // console.log(element[i]);
+                element[i].checked = !element[i].checked;
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="checkbox"> c++
+    <input type="checkbox" checked> java
+    <input type="checkbox"> js
+</body>
+</html>

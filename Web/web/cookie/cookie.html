@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cookie</title>
+    <base href="http://localhost:8080/Web/">
+</head>
+<body>
+    <iframe width="500" height="500" name="target"></iframe>
+    <ul>
+        <li>
+            <a href="cookieServlet?action=createCookie" target="target">cookie的创建</a>
+        </li>
+        <li>
+            <a href="cookieServlet?action=getCookie" target="target">cookie的获取</a>
+        </li>
+        <li>
+            <a href="cookieServlet?action=updateCookie" target="target">cookie的修改</a>
+        </li>
+        <li>cookie的存活周期</li>
+        <li>
+            <ul>
+                <li>
+                    <a href="cookieServlet?action=defaultLife" target="target">cookie的默认存活时间(会话）</a>
+                </li>
+                <li>
+                    <a href="cookieServlet?action=deleteNow" target="target">cookie的立即删除</a>
+                </li>
+                <li>
+                    <a href="cookieServlet?action=life3600" target="target">cookie的存活3600秒（一小时）</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="cookieServlet?action=testPath" target="target">cookie的路径设置</a>
+        </li>
+        <li>
+            <a href="" target="target">cookie的用户免登录练习</a>
+        </li>
+    </ul>
+</body>
+</html>

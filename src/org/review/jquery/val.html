@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-1.8.3.js"></script>
+    <!--批量操作选框-->
+    <script>
+        $(document).ready(function () {
+            /*
+            * 批量操作选框
+            * */
+            $(':radio,:checkbox,#multiple,#single').val(["radio2","check2","check3","mul3","mul4","single2"])
+
+            /*
+            * attr and prop
+            * */
+            alert($(':checkbox').attr("checked"))
+            alert($(':checkbox').prop("checked"))
+            $(':checkbox').attr('checked',true)
+            $(':checkbox').prop('checked',true)
+            alert($(':checkbox').attr('abc'))
+            alert($(':checkbox').prop('abc'))
+        })
+    </script>
+</head>
+<body>
+    <form action="#">
+        <input type="radio" value="radio1">
+        <input type="radio" value="radio2">
+        <input type="radio" value="radio3">
+        <input type="checkbox" abc="aaaa" value="check1">
+        <input type="checkbox" value="check2">
+        <input type="checkbox" value="check3">
+        <input type="checkbox" value="check4">
+        <!--下拉多选-->
+        <select name="multiple" id="multiple" multiple="multiple">
+            <option value="mul1">0</option>
+            <option value="mul2">1</option>
+            <option value="mul3">2</option>
+            <option value="mul4">3</option>
+        </select>
+        <!--下拉单选-->
+        <select name="single" id="single">
+            <option value="single1">0</option>
+            <option value="single2">2</option>
+            <option value="single3">3</option>
+            <option value="single4">4</option>
+        </select>
+    </form>
+</body>
+</html>

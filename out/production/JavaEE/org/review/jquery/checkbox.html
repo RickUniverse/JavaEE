@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-1.8.3.js"></script>
+    <script>
+        //复选框选择练习题
+        $(function () {
+            $(':input[type]')
+            //全选按钮绑定事件
+            $(':input[name="butAll"]').click(function () {
+                $(':checkbox').prop('checked',true);
+            })
+            //全不选按钮
+            // alert($(':input[name="noAll"]').length)
+            $(':input[name="noAll"]').click(function () {
+                $(':checkbox').prop('checked',false);
+            })
+            //反选
+            $(':input[name="reversal"]').click(function () {
+                $(':checkbox[name="items"]').each(function () {
+                    this.checked = !this.checked;
+                })
+
+                //检查是否满选
+                //所有个数
+                var allCount = $(':checkbox[name="items"]').length;
+                //选中的个数
+                var checkedCount = $(':checkbox[name="items"]:checked').length;
+
+                //检查满选
+                $(':checkbox[name="checkAllBox"]').prop('checked',allCount == checkedCount);
+            })
+
+            //提交
+            $(':input[name="submit"]').click(function () {
+                //所有选中的
+                $(':input[name="items"]:checked').each(function () {
+                    alert(this.value)
+                })
+            })
+
+            //全选全不选
+            $(':input[name="checkAllBox"]').click(function () {
+                $(':checkbox[name="items"]').prop('checked',this.checked)
+            })
+
+            //判断是否全部选择
+            $(':checkbox[name="items"]').click(function () {
+                //检查是否满选
+                //所有个数
+                var allCount = $(':checkbox[name="items"]').length;
+                //选中的个数
+                var checkedCount = $(':checkbox[name="items"]:checked').length;
+                $(':checkbox[name="checkAllBox"]').prop('checked',allCount == checkedCount)
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <form action="#">
+        <input type="checkbox" name="checkAllBox"> 全选/全不选
+        <input type="checkbox" name="items" value="a">
+        <input type="checkbox" name="items" value="b">
+        <input type="checkbox" name="items" value="c">
+        <input type="checkbox" name="items" value="d">
+
+        <input type="button" name="butAll" value="全选">
+        <input type="button" name="noAll" value="全不选">
+        <input type="button" name="reversal" value="反选">
+        <input type="button" name="submit" value="提交">
+    </form>
+</body>
+</html>
